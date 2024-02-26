@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Gram Panchayat Website</title>
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<!--Favicon
+	<link href="img/favicon.ico" rel="icon">-->
+
+<!--	Google Web Fonts
+-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+		rel="stylesheet">
+
+
+	<link th:href="@{https://fonts.googleapis.com}" rel="preconnect" />
+	<link th:href="@{https://fonts.gstatic.com}" rel="preconnect" />
+	<link
+		th:href="@{https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap}"
+		rel="stylesheet" />
+
+
+
+
+
+
+<!--	Icon Font Stylesheet
+-->	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+	<link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css}" rel="stylesheet" />
+	<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet" />
+
+
+
+<!--	Libraries Stylesheet
+-->	<link href="lib/animate/animate.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+	<link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet" />
+	<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet" />
+
+
+
+<!--	Customized Bootstrap Stylesheet
+-->	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+
+
+
+<!--	Template Stylesheet
+-->	<link href="css/style.css" rel="stylesheet">
+
+
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/style1.css}" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+	<div class="container-xxl bg-white p-0">
+		<!--		 Spinner Start -->
+		<div id="spinner"
+			class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<!-- Spinner End 
+
+
+		 Navbar Start-->
+		<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+			<a href="index1" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+				<h1 class="m-0 text-primary">Gram Panchayat</h1>
+			</a>
+			<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+				data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto p-4 p-lg-0">
+
+					<!--	 Name : [[${user.fullName}]]-->
+
+
+					<a href="/user/" class="nav-item nav-link active">Home</a>
+					<a href="about" class="nav-item nav-link">About</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="required_doc_certificate" class="dropdown-item">Required Documents</a>
+						</div>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="required_doc_certificate_list" class="dropdown-item">Required Documents List</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Schemes</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="CentrallySponsoredSchemes" class="dropdown-item">Centrally Sponsored Schemes</a>
+							<a href="StateSponsoredSchemes" class="dropdown-item">State Sponsored Schemes</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Certificates</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="birthcertificate" class="dropdown-item">Birth Certificates</a>
+							<a href="Deathcertificate" class="dropdown-item">Death Certificates</a>
+							<a href="voterApplication" class="dropdown-item">Voter Application</a>
+							<a href="marriege_certificate" class="dropdown-item">Marriage Certificates</a>
+						</div>
+					</div>
+					<!--	<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sign In</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="signin" class="dropdown-item">Sign in</a>
+							<a href="register" class="dropdown-item">Sign up</a>
+						</div>
+					</div>-->
+				</div>
+
+
+
+				<!--				<a href="" class="nav-item nav-link"><i class='far fa-bell' style='font-size:36px'></i></a>
+-->
+
+				<div>
+					
+					<a href="user"> <img class="" th:src="@{/img1/user2.jpg}" height="50px" ></a>
+					
+	    			<!--<img class="" th:src="@{/img1/user.png}" height="35px" >
+-->
+<!--					<a href="user" class="nav-link dropdown-toggle">[[${user.fullName}]]</</a>
+-->
+				</div>
+
+
+
+
+			</div>
+		</nav>
+		<!-- Navbar End 
+
+
+		 Carousel Start -->
+		<div class="container-fluid p-0">
+			<div class="owl-carousel header-carousel position-relative">
+				<div class="owl-carousel-item position-relative">
+					<img class="img-fluid" th:src="@{/img/abc1.jpg}" alt="">
+					<div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+						style="background: rgba(43, 57, 64, .5);">
+						<div class="container">
+							<div class="row justify-content-start">
+								<div class="col-10 col-lg-8">
+									<h1 class="display-3 text-white animated slideInDown mb-4">Welcome To Gram Panchayat
+									</h1>
+									<p class="fs-5 fw-medium text-white mb-4 pb-2">ग्रामपंचायत मध्ये आपले स्वागत आहे</p>
+									<!--  <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="owl-carousel-item position-relative">
+					<img class="img-fluid" th:src="@{/img1/3035371-8.jpg}" alt="">
+					<div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+						style="background: rgba(43, 57, 64, .5);">
+						<div class="container">
+							<div class="row justify-content-start">
+								<div class="col-10 col-lg-8">
+									<h1 class="display-3 text-white animated slideInDown mb-4">Welcome To Gram Panchayat
+									</h1>
+									<p class="fs-5 fw-medium text-white mb-4 pb-2">ग्रामपंचायत मध्ये आपले स्वागत आहे
+									</p>
+									<!--  <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Carousel End 
+
+
+		 Search Start -->
+		<!--	<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+			<div class="container">
+				<div class="row g-2">
+
+
+					<div class="col-md-10">
+						<div class="row g-2">
+							<div class="col-md-4">
+								<input type="text" class="form-control border-0" placeholder="Keyword" />
+							</div>
+							<div class="col-md-4">
+								<select class="form-select border-0">
+									<option selected>Category</option>
+									<option value="1">Category 1</option>
+									<option value="2">Category 2</option>
+									<option value="3">Category 3</option>
+								</select>
+							</div>
+							<div class="col-md-4">
+								<select class="form-select border-0">
+									<option selected>Location</option>
+									<option value="1">Location 1</option>
+									<option value="2">Location 2</option>
+									<option value="3">Location 3</option>
+								</select>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-2">
+						<button class="btn btn-dark border-0 w-100">Search</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		 Search End 
+
+
+		 Category Start -->
+		<div class="container-xxl py-5">
+			<div class="container">
+				<h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"> CERTIFICATES </h1>
+				<div class="row g-4">
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<a class="cat-item rounded p-4" href="/user/birthcertificate">
+							<i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
+							<h6 class="mb-3">Birth-Certificate</h6>
+							<p class="mb-0"></p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+						<a class="cat-item rounded p-4" href="/user/marriege_certificate">
+							<i class="fa fa-3x fa-headset text-primary mb-4"></i>
+							<h6 class="mb-3"> Marriage Certificate</h6>
+							<p class="mb-0"></p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+						<a class="cat-item rounded p-4" href="/user/voterApplication">
+							<i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+							<h6 class="mb-3">Voter Application</h6>
+							<p class="mb-0"></p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<a class="cat-item rounded p-4" href="/user/Deathcertificate">
+							<i class="fa fa-3x fa-tasks text-primary mb-4"></i>
+							<h6 class="mb-3"> Death-Certificate</h6>
+							<p class="mb-0"></p>
+						</a>
+					</div>
+					<!--<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<a class="cat-item rounded p-4" href="">
+							<i class="fa fa-3x fa-chart-line text-primary mb-4"></i>
+							<h6 class="mb-3">Business Development</h6>
+							<p class="mb-0">123 Vacancy</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+						<a class="cat-item rounded p-4" href="">
+							<i class="fa fa-3x fa-hands-helping text-primary mb-4"></i>
+							<h6 class="mb-3">Sales & Communication</h6>
+							<p class="mb-0">123 Vacancy</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+						<a class="cat-item rounded p-4" href="">
+							<i class="fa fa-3x fa-book-reader text-primary mb-4"></i>
+							<h6 class="mb-3">Teaching & Education</h6>
+							<p class="mb-0">123 Vacancy</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+						<a class="cat-item rounded p-4" href="">
+							<i class="fa fa-3x fa-drafting-compass text-primary mb-4"></i>
+							<h6 class="mb-3">Design & Creative</h6>
+							<p class="mb-0">123 Vacancy</p>
+						</a>
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<!-- Category End 
+
+
+
+
+		 About Start   -->
+		<div class="container-xxl py-5">
+			<div class="container">
+				<div class="row g-5 align-items-center">
+					<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+						<div class="row g-0 about-bg rounded overflow-hidden">
+							<div class="col-6 text-start">
+								<img class="img-fluid w-100" th:src="@{/img/abc6.jpg}">
+							</div>
+							<div class="col-6 text-start">
+								<img class="img-fluid w-100" th:src="@{/img/abc7.jpg}">
+							</div>
+							<div class="col-6 text-end">
+								<img class="img-fluid" th:src="@{/img/abc4.jpg}">
+							</div>
+							<div class="col-6 text-end">
+								<img class="img-fluid w-100" th:src="@{/img/abc1.jpg}">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+						<h1 class="mb-4">ग्रामपंचायत विषयी माहिती</h1>
+						<p class="mb-4">1 मे 1960 रोजी महाराष्ट्र राज्याची निर्मिती झाली त्याच्या पूर्वीपासून म्हणजेच
+							1958 पासून मुंबई ग्रामपंचायत अधिनियम कलम 5 नुसार ग्रामपंचायतीची स्थापना करण्यात आली होती. या
+							कलमामध्ये प्रत्येक गावामध्ये एक ग्रामपंचायत असा उल्लेख केलेला आहे</p>
+						<p><i class="fa fa-check text-primary me-3"></i>ग्रामपंचायतीच्या विकास कामांना मजुरी देणे.</p>
+						<p><i class="fa fa-check text-primary me-3"></i>ग्रामपंचायतीच्या विकास कामांना मजुरी देणे.</p>
+						<p><i class="fa fa-check text-primary me-3"></i>ग्रामसभा ठरावाच्या माध्यमातून सर्व विभागांना
+							सूचना व मत पाठवू शकते.</p>
+						<a class="btn btn-primary py-3 px-5 mt-3" href="help">Read More</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--
+		         About End   
+
+
+
+		 Jobs Start -->
+		<div class="container-xxl py-5">
+			<div class="container">
+				<h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Latest Updates</h1>
+				<div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+					<ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill"
+								href="#tab-1">
+								<h6 class="mt-n1 mb-0">Featured</h6>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill"
+								href="#tab-2">
+								<h6 class="mt-n1 mb-0">Latest</h6>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill"
+								href="#tab-3">
+								<h6 class="mt-n1 mb-0">Old</h6>
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div id="tab-1" class="tab-pane fade show p-0 active">
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">PM Kisan Next Installment : किसानों के खाते में पहुंचे 2
+												हजार रुपये, कब आएगी 15वीं किस्त, pmkisan.gov.in पर ऐसे चेक करें अपना
+												स्टेटस</h5>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Featured</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="https://www.pmkisan.gov.in">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2024</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-2.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">PM Kisan Samman-Nidhi Payment status : PM किसान सम्मान निधि
+												की 14वीं किस्त अटकी है, तो तुरंत करें ये काम,और पाएं अकाउंट में पैसे
+												दोगूना</h5>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Old</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary"
+												href="https://mysarkarimitra.in/pm-kisan-samman-nidhi-payment-status/">Apply
+												Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 May,
+											2024</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-3.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Fasal Bima Scheme 2023 : सरकार ने 5 लाख 60 हजार किसानों को
+												258 करोड़ रुपये का बीमा क्लेम जारी किया</h5>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Latest</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="https://mysarkarimitra.in/">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2023</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-4.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Tractor Subsidy Scheme : नवीन ट्रॅक्टर आणि ट्रॉली खरेदी
+												करण्यासाठी 90 टक्के अनुदानावर ऑनलाईन अर्ज सुरू, असं करा ऑनलाईन अर्ज,
+												शासन निर्णय जाहीर</h5>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Featured</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary"
+												href="https://mahitihakkachi.in/tractor-subsidy-scheme-on-mahadbt/">Apply
+												Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2025</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">महाराष्ट्र राज्य कृषि पणन मंडळाची शेतमाल तारण कर्ज योजना
+											</h5>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Latest</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary"
+												href="https://www.msamb.com/Schemes/PledgeFinance">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Dec,
+											2024</small>
+									</div>
+								</div>
+							</div>
+							<a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
+						</div>
+						<div id="tab-2" class="tab-pane fade show p-0">
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Software Engineer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Marketing Manager</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Product Designer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Creative Director</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Wordpress Developer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
+						</div>
+						<div id="tab-3" class="tab-pane fade show p-0">
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Software Engineer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Marketing Manager</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Product Designer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Creative Director</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-8 d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid border rounded"
+											th:src="@{/img/com-logo-1.jpg}" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h5 class="mb-3">Wordpress Developer</h5>
+											<span class="text-truncate me-3"><i
+													class="fa fa-map-marker-alt text-primary me-2"></i>New York,
+												USA</span>
+											<span class="text-truncate me-3"><i
+													class="far fa-clock text-primary me-2"></i>Full Time</span>
+											<span class="text-truncate me-0"><i
+													class="far fa-money-bill-alt text-primary me-2"></i>$123 -
+												$456</span>
+										</div>
+									</div>
+									<div
+										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-light btn-square me-3" href=""><i
+													class="far fa-heart text-primary"></i></a>
+											<a class="btn btn-primary" href="">Apply Now</a>
+										</div>
+										<small class="text-truncate"><i
+												class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan,
+											2045</small>
+									</div>
+								</div>
+							</div>
+							<a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Jobs End 
+
+
+		 Testimonial Start -->
+		<!--<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="container">
+				<h1 class="text-center mb-5">Our Clients Say!!!</h1>
+				<div class="owl-carousel testimonial-carousel">
+					<div class="testimonial-item bg-light rounded p-4">
+						<i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+						<p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
+							diam</p>
+						<div class="d-flex align-items-center">
+							<img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg"
+								style="width: 50px; height: 50px;">
+							<div class="ps-3">
+								<h5 class="mb-1">Client Name</h5>
+								<small>Profession</small>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-item bg-light rounded p-4">
+						<i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+						<p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
+							diam</p>
+						<div class="d-flex align-items-center">
+							<img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg"
+								style="width: 50px; height: 50px;">
+							<div class="ps-3">
+								<h5 class="mb-1">Client Name</h5>
+								<small>Profession</small>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-item bg-light rounded p-4">
+						<i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+						<p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
+							diam</p>
+						<div class="d-flex align-items-center">
+							<img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg"
+								style="width: 50px; height: 50px;">
+							<div class="ps-3">
+								<h5 class="mb-1">Client Name</h5>
+								<small>Profession</small>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-item bg-light rounded p-4">
+						<i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+						<p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
+							diam</p>
+						<div class="d-flex align-items-center">
+							<img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-4.jpg"
+								style="width: 50px; height: 50px;">
+							<div class="ps-3">
+								<h5 class="mb-1">Client Name</h5>
+								<small>Profession</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<!-- Testimonial End  -->
+
+
+		<!-- Contact Start-->
+
+
+		<!--	<section>
+
+			<div class="container p-10">
+
+				<h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Contact For GramPanchayat</h1>
+
+
+				<div class="row">
+					<div class="col-md-0 offset-md-">
+						<div class="card">
+
+							<div class="card-header text-center fs-4">Contact</div>
+
+
+							<div class="card-body">
+
+
+								<form th:action="@{/contactdata}" method="post">
+
+
+
+									<div class="mb-3">
+										<label style="text-align: left;">Enter Name</label>
+										<input type="text" id="name" name="name" class="form-control">
+									</div>
+
+									<div class="mb-3">
+										<label>Enter Email</label>
+										<input type="text" id="email" name="email" class="form-control">
+									</div>
+
+
+										<div class="mb-3">
+										<label>Message</label>
+										<textarea class="form-control" id="message" placeholder="Message"
+											required="required" id="message" name="message" 
+											data-validation-required-message="Please enter your message"></textarea>
+										<p class="help-block text-danger"></p>
+									</div>
+
+
+
+									<button class="btn btn-primary col-md-12"
+										style="background-color: #4CAF50;">Submit</button>
+
+										<div>
+										<button class="btn custom-btn" type="submit" id="sendMessageButton">Send
+											Message</button>
+									</div>
+
+
+									<div class="cc" >
+										<div >
+											<button type="submit"><span>Send Message</span></button>
+											
+										</div>
+										
+									</div>
+
+
+
+									<div class="container">
+										<ul class="myUL">
+											<div class="btn btn-primary py-3 px-5">
+												<button type="submit">Send Message</button>
+											</div>
+										</ul>
+									</div>
+
+							</div>
+
+
+							</form>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</div>
+
+	</section>-->
+
+
+		<!--Contact End-->
+
+
+
+
+
+		<h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Contact For GramPanchayat</h1>
+
+		<div class="container-xxl py-5">
+			<div class="container">
+				<div class="row g-5 align-items-center">
+					<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+						<div class="row g-0 about-bg rounded overflow-hidden">
+							<div class="">
+								<img class="img-fluid w-100" th:src="@{/img1/contact.jpg}">
+							</div>
+							<!--<div class="col-6 text-start">
+								<img class="img-fluid w-100" th:src="@{/img/abc7.jpg}">
+							</div>
+							<div class="col-6 text-end">
+								<img class="img-fluid" th:src="@{/img/abc4.jpg}">
+							</div>
+							<div class="col-6 text-end">
+								<img class="img-fluid w-100" th:src="@{/img/abc1.jpg}">
+							</div>-->
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+						<div class="row g-0 about-bg rounded overflow-hidden">
+
+							<div class="card">
+								<div class="card-header text-center fs-4">Contact For GramPanchayat</div>
+								<br>
+								<form th:action="@{contactdata}" method="post">
+									<div class="mb-3">
+										<label> &nbsp; Enter Name</label>
+										<input type="text" id="name" name="name" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label> &nbsp; Enter Email</label>
+										<input type="text" id="email" name="email" class="form-control">
+									</div>
+
+									<div class="mb-3">
+										<label> &nbsp; Enter Message</label>
+										<input type="text" id="message" name="message" class="form-control">
+									</div>
+
+									<!--<div class="mb-3">
+										<label>Message</label>
+										<textarea class="form-control" id="message" placeholder="Message"
+											required="required" id="message" name="message" 
+											data-validation-required-message="Please enter your message"></textarea>
+										<p class="help-block text-danger"></p>
+									</div>
+-->
+
+									<div class="btn btn-primary py-3 px-5">
+										<center><button type="submit" id="sendMessageButton"> Message </button>
+										</center>
+									</div>
+
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<!--  Footer Start -->
+	<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+		<div class="container py-5">
+			<div class="row g-5">
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-white mb-4">GramPachayat</h5>
+					<a class="btn btn-link text-white-50" href="about">About Us</a>
+					<a class="btn btn-link text-white-50" href="contact">Contact Us</a>
+					<a class="btn btn-link text-white-50" href="required_doc_certificate_list">Our Services</a>
+					<a class="btn btn-link text-white-50" href="privacyPolicy">Privacy Policy</a>
+					<a class="btn btn-link text-white-50" href="termsAndCondition">Terms & Condition</a>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-white mb-4">Quick Links</h5>
+					<a class="btn btn-link text-white-50" href="about">About Us</a>
+					<a class="btn btn-link text-white-50" href="contact">Contact Us</a>
+					<a class="btn btn-link text-white-50" href="required_doc_certificate">Our Services</a>
+					<a class="btn btn-link text-white-50" href="privacyPolicy">Privacy Policy</a>
+					<a class="btn btn-link text-white-50" href="termsAndCondition">Terms & Condition</a>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-white mb-4">Contact</h5>
+					<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nagar Road, Wagholi, Pune</p>
+					<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+					<p class="mb-2"><i class="fa fa-envelope me-3"></i>grampanchyat@gmail.com</p>
+					<div class="d-flex pt-2">
+						<a class="btn btn-outline-light btn-social" href="https://twitter.com/i/flow/signup"><i class="fab fa-twitter"></i></a>
+						<a class="btn btn-outline-light btn-social" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+						<a class="btn btn-outline-light btn-social" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+						<a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-white mb-4">User</h5>
+					<p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+					<div class="position-relative mx-auto" style="max-width: 400px;">
+						<input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+							placeholder="Your email">
+						<button type="button"
+							class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"> [[${user.email}]]</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--  			<h1> Email : [[${user.email}]]</h1>
+  -->
+		
+		
+<!--		<div class="container">
+			<div class="copyright">
+				<div class="row">
+					<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+							
+							/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </div>
+					<div class="col-md-6 text-center text-md-end">
+							<div class="footer-menu">
+								<a href="index1">Home</a>
+								<a href="category">Cookies</a>
+								<a href="help">Help</a>
+								<a href="about">FQAs</a>
+							</div>
+				</div>
+			</div>
+		</div>-->
+	</div>
+	</div>
+	
+	<a href="/user/" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+	</div>
+
+	<!--	 JavaScript Libraries -->
+	<!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/wow/wow.min.js}"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>-->
+
+	<script th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/lib/wow/wow.min.js}"></script>
+	<script th:src="@{/lib/easing/easing.min.js}"></script>
+	<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+	<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+	<!-- Template Javascript-->
+	<script th:src="@{/js/main.js}"></script>
+
+	<script type="text/javascript" src="..//../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+</body>
+
+</html>

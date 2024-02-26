@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Gram Panchayat Website</title>
+
+
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+		rel="stylesheet">
+
+
+	<link th:href="@{https://fonts.googleapis.com}" rel="preconnect" />
+	<link th:href="@{https://fonts.gstatic.com}" rel="preconnect" />
+	<link
+		th:href="@{https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap}"
+		rel="stylesheet" />
+
+
+	<!-- Icon Font Stylesheet -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+	<link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet" />
+	<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet" />
+
+
+
+
+	<link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css}" rel="stylesheet" />
+	<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet" />
+
+
+
+
+	<!-- Libraries Stylesheet -->
+	<link href="lib/animate/animate.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+	<link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet" />
+	<link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet" />
+
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+
+	<!-- Template Stylesheet -->
+	<!--    <link href="css/style.css" rel="stylesheet">
+-->
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+
+
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/style1.css}" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+	<div class="container-xxl bg-white p-0">
+		<!-- Spinner Start -->
+		<div id="spinner"
+			class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<!-- Spinner End -->
+
+
+		<!--	 Navbar Start 
+		<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+			<a href="index1" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+				<h1 class="m-0 text-primary">Gram Panchayat</h1>
+			</a>
+			<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+				data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto p-4 p-lg-0">
+					<a href="index1" class="nav-item nav-link active">Home</a>
+					<a href="about" class="nav-item nav-link">About</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="required_doc_certificate" class="dropdown-item">Required Documents</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Schemes</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="scheme_info" class="dropdown-item">Governments Schemes</a>
+							<a href="feedback" class="dropdown-item">Schemes Info</a>
+							<a href="404" class="dropdown-item">Eligibility Text Alert</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Certificates</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="birthcertificate" class="dropdown-item">Birth Certificates</a>
+							<a href="Deathcertificate" class="dropdown-item">Death Certificates</a>
+							<a href="voterApplication" class="dropdown-item">Voter Application</a>
+							<a href="marriege_certificate" class="dropdown-item">Marriage Certificates</a>
+						</div>
+					</div>
+				</div>
+				<a href="" class="nav-item nav-link"><i class='far fa-bell' style='font-size:36px'></i></a>
+			</div>
+		</nav>
+		 Navbar End -->
+
+
+
+		<!--
+		 Navbar Start-->
+		<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+			<a href="index1" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+				<h1 class="m-0 text-primary">Gram Panchayat</h1>
+			</a>
+			<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+				data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto p-4 p-lg-0">
+					<a href="/user/" class="nav-item nav-link active">Home</a>
+					<a href="about" class="nav-item nav-link">About</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="required_doc_certificate" class="dropdown-item">Required Documents</a>
+						</div>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="required_doc_certificate_list" class="dropdown-item">Required Documents List</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Schemes</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="CentrallySponsoredSchemes" class="dropdown-item">Centrally Sponsored Schemes</a>
+							<a href="StateSponsoredSchemes" class="dropdown-item">State Sponsored Schemes</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Certificates</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="birthcertificate" class="dropdown-item">Birth Certificates</a>
+							<a href="Deathcertificate" class="dropdown-item">Death Certificates</a>
+							<a href="voterApplication" class="dropdown-item">Voter Application</a>
+							<a href="marriege_certificate" class="dropdown-item">Marriage Certificates</a>
+						</div>
+					</div>
+					<!--	<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sign In</a>
+						<div class="dropdown-menu rounded-0 m-0">
+							<a href="signin" class="dropdown-item">Sign in</a>
+							<a href="register" class="dropdown-item">Sign up</a>
+						</div>
+					</div>-->
+				</div>
+
+
+
+				<!--				<a href="" class="nav-item nav-link"><i class='far fa-bell' style='font-size:36px'></i></a>
+-->
+				<a href="/logout" class="nav-link dropdown-toggle">Logout</a>
+			</div>
+		</nav>
+		<!-- Navbar End 
+
+		 
+
+
+		<!-- Header End -->
+		<div class="container-xxl py-5 bg-dark page-header mb-5">
+			<div class="container my-5 pt-5 pb-4">
+				<h1 class="display-3 text-white mb-3 animated slideInDown">Required Documents List</h1>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb text-uppercase">
+						<li class="breadcrumb-item"><a href="/user/">Home</a></li>
+						<!--<li class="breadcrumb-item"><a href="#">Pages</a></li>-->
+						<!--						<li class="breadcrumb-item text-white active" aria-current="page">About</li>
+-->
+						<li class="breadcrumb-item text-white active"><a href="/user/about">About</a></li>
+
+					</ol>
+				</nav>
+			</div>
+		</div>
+		<!-- Header End -->
+
+
+		<!--
+
+		 Job Detail Start 
+		<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="container">
+				<div class="row gy-5 gx-4">
+					<div class="col-lg-8">
+						<div class="d-flex align-items-center mb-5">
+							<img class="flex-shrink-0 img-fluid border rounded" th:src="@{/img/com-logo-2.jpg}" alt=""
+								style="width: 80px; height: 80px;">
+							<div class="text-start ps-4">
+								<h3 class="mb-3">Marketing Manager</h3>
+								<span class="text-truncate me-3"><i
+										class="fa fa-map-marker-alt text-primary me-2"></i>New York, USA</span>
+								<span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full
+									Time</span>
+								<span class="text-truncate me-0"><i
+										class="far fa-money-bill-alt text-primary me-2"></i>$123 - $456</span>
+							</div>
+						</div>
+
+						<div class="mb-5">
+							<h4 class="mb-3">Job description</h4>
+							<p>Dolor justo tempor duo ipsum accusam rebum gubergren erat. Elitr stet dolor vero clita
+								labore gubergren. Kasd sed ipsum elitr clita rebum ut sea diam tempor. Sadipscing nonumy
+								vero labore invidunt dolor sed, eirmod dolore amet aliquyam consetetur lorem, amet elitr
+								clita et sed consetetur dolore accusam. Vero kasd nonumy justo rebum stet. Ipsum amet
+								sed lorem sea magna. Rebum vero dolores dolores elitr vero dolores magna, stet sea
+								sadipscing stet et. Est voluptua et sanctus at sanctus erat vero sed sed, amet duo no
+								diam clita rebum duo, accusam tempor takimata clita stet nonumy rebum est invidunt stet,
+								dolor.</p>
+							<h4 class="mb-3">Responsibility</h4>
+							<p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet
+								voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum
+									accusam</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita
+									labore gubergren</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at
+									sanctus erat</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est
+								</li>
+							</ul>
+							<h4 class="mb-3">Qualifications</h4>
+							<p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet
+								voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum
+									accusam</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita
+									labore gubergren</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at
+									sanctus erat</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est
+								</li>
+							</ul>
+						</div>
+
+						<div class="">
+							<h4 class="mb-4">Apply For Certificate</h4>
+							<form>
+								<div class="row g-3">
+									<div class="col-12 col-sm-6">
+										<input type="text" class="form-control" name="name" placeholder="Your Name">
+									</div>
+									<div class="col-12 col-sm-6">
+										<input type="email" class="form-control" name="email" placeholder="Your Email">
+									</div>
+
+
+									<div class="col-12 col-sm-6">
+
+										<label>Certificate Type</label>
+										<select name="certficate_type" class="form-control">
+
+											<option value="Select">Select Certificate Type</option>
+											<option value="Birth Certificate">Birth Certificate</option>
+											<option value="Death Certificate">Death Certificate</option>
+											<option value="Voter Application">Voter Application</option>
+											<option value="Marriage Certificate">Marriage Certificate</option>
+										</select>
+									</div>
+
+
+									<div class="col-12 col-sm-6">
+										<input type="file" class="form-control bg-white" name="images"
+											placeholder="Select Your Image">
+									</div>
+									<div class="col-12">
+										<textarea class="form-control" name="comments" rows="5"
+											placeholder="Comments"></textarea>
+									</div>
+									<div class="col-12">
+										<button class="btn btn-primary w-100" type="submit">Apply Now</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4">Job Summery</h4>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>Published On: 01 Jan, 2045</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>Vacancy: 123 Position</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature: Full Time</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>Salary: $123 - $456</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>Location: New York, USA</p>
+							<p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>Date Line: 01 Jan, 2045
+							</p>
+						</div>
+						<div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4">Company Detail</h4>
+							<p class="m-0">Ipsum dolor ipsum accusam stet et et diam dolores, sed rebum sadipscing elitr
+								vero dolores. Lorem dolore elitr justo et no gubergren sadipscing, ipsum et takimata
+								aliquyam et rebum est ipsum lorem diam. Et lorem magna eirmod est et et sanctus et, kasd
+								clita labore.</p>
+						</div>
+						<br>
+						<div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4">Company Detail</h4>
+							<p class="m-0">Ipsum dolor ipsum accusam stet et et diam dolores, sed rebum sadipscing elitr
+								vero dolores. Lorem dolore elitr justo et no gubergren sadipscing, ipsum et takimata
+								aliquyam et rebum est ipsum lorem diam. Et lorem magna eirmod est et et sanctus et, kasd
+								clita labore.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 Job Detail End -->
+
+
+
+
+
+		<!-- Job Detail Start -->
+		<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="container">
+				<div class="row gy-5 gx-4">
+					<div class="col-lg-8">
+						<div class="d-flex align-items-center mb-5">
+							<img class="flex-shrink-0 img-fluid border rounded" th:src="@{/img1/certified_PNG24.png}" alt=""
+								style="width: 80px; height: 80px;">
+							<div class="text-start ps-4">
+								<h3 class="mb-3">प्रमाणपत्र माहिती(Certificate Details)</h3>
+								<!--<span class="text-truncate me-3"><i
+										class="fa fa-map-marker-alt text-primary me-2"></i>New York, USA</span>
+								<span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full
+									Time</span>
+								<span class="text-truncate me-0"><i
+										class="far fa-money-bill-alt text-primary me-2"></i>$123 - $456</span>-->
+							</div>
+						</div>
+
+						<div class="mb-5">
+							<h4 class="mb-3">जन्म प्रमाणपत्र </h4>
+							<p>जन्म प्रमाणपत्र ही अधिकृत माहिती आहे जी जन्मतारीख, जन्म स्थान, लिंग आणि नवीन जन्मलेल्या
+								मुलाचे नाव याची पुष्टी करते.
+								जन्म प्रमाणपत्र एखाद्या व्यक्तीचे कायदेशीर अस्तित्व सिद्ध करते आणि या घटनेची नोंदणी ही
+								त्यांच्या मालकीच्या लोकसंख्येच्या मूलभूत महत्त्वपूर्ण डेटाचा स्रोत आहे..
+								जन्माची नोंद करण्यासाठी खालील कागदपत्रे आवश्यक आहेत.
+								<li><i class="fa fa-angle-right text-primary me-2"></i> जन्मस्थळाचा पुरावा</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> पालकांचा ओळख पुरावा</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> पालकांचे विवाह प्रमाणपत्र
+									(पर्यायी)</li>
+							</p>
+
+							<h4 class="mb-3">मृत्यू प्रमाणपत्र </h4>
+							<p>मृत्यू प्रमाणपत्र हे मृत व्यक्तीच्या निकटवर्तीयांना सरकारने जारी केलेले कायदेशीर दस्तऐवज
+								आहे.
+								हा दस्तऐवज मृत्यूचे कारण, मृत्यूची वेळ, मृत्यूचे स्थान आणि मृत व्यक्तीचे इतर वैयक्तिक
+								तपशील घोषित करतो.
+								मृत्यू प्रमाणपत्रासाठी अर्ज करताना खालील कागदपत्रे सहज उपलब्ध आहेत याची खात्री करा.
+								<li><i class="fa fa-angle-right text-primary me-2"></i> मृत व्यक्तीच्या जन्माचा पुरावा
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> अर्जदाराने मृत व्यक्तीशी
+									नातेसंबंधाचा पुरावा देणे आवश्यक आहे </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>.मृत्यूची तारीख आणि वेळ नमूद
+									करणारे शपथपत्र </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> शिधापत्रिकेची प्रत.</li>
+							</p>
+
+							<h4 class="mb-3">मतदान कार्ड </h4>
+							<p>निवडणुकीत मतदान करण्यासाठी नागरिकाला मतदान ओळखपत्र आवश्यक असते. 18 वर्षे पूर्ण झालेले
+								भारतातील सर्व नागरिक मतदार ओळखपत्रासाठी अर्ज करू शकतात.
+								यासाठी केंद्र सरकारने एक पोर्टल सुरू केले आहे. या पोर्टलद्वारे, सर्व पात्र नागरिक मतदार
+								ओळखपत्रासाठी अर्ज करू शकतात.
+								मतदान ओळखपत्रासाठी पात्रता आणि आवश्यक कागदपत्रे
+								<li><i class="fa fa-angle-right text-primary me-2"></i> आधार कार्ड </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> बँक पासबुक </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>वाहन चालविण्याचा परवाना </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> पत्त्यासाठी पुरावा</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>मोबाईल नंबर</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> पासपोर्ट आकाराचे छायाचित्र</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> अर्जदार हा भारताचा कायमचा
+									रहिवासी असणे आवश्यक आहे</li>
+							</p>
+
+							<h4 class="mb-3"> विवाह नोंदणी प्रमाणपत्र</h4>
+							<p>लग्न झाल्यावर प्रत्येकाला विवाह नोंदणी करावी लागते.
+								तर मॅरेज सर्टिफिकेट काढण्यासाठी लागणारे आवश्यक कागदपत्रे कोणकोणते. त्याबद्दल संपूर्ण
+								माहिती पाहणार आहोत.मॅरेज सर्टिफिकेट साठी डॉक्युमेंट
+								<li><i class="fa fa-angle-right text-primary me-2"></i> वधू आणि वराचे फोटो </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> वधू-वराचे आधार कार्डची झेरॉक्स
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>लग्नात उपस्थित असलेले तीन
+									साक्षीदार व त्यांचे तीन फोटो आणि आधार कार्ड चे झेरॉक्स. </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> लग्नपत्रिका </li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> लग्नाचा ब्राह्मण सोबतचा एक फोटो
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> ब्राह्मणाची नावासह माहिती</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i> विवाह नोंदणी फॉर्म</li>
+							</p>
+						</div>
+
+
+
+
+						<!--<h4 class="mb-3">Responsibility</h4>
+							<p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet
+								voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum
+									accusam</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita
+									labore gubergren</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at
+									sanctus erat</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est
+								</li>
+							</ul>
+							<h4 class="mb-3">Qualifications</h4>
+							<p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet
+								voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum
+									accusam</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita
+									labore gubergren</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr
+								</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at
+									sanctus erat</li>
+								<li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est
+								</li>
+							</ul>
+						</div>-->
+
+						<div class="">
+							<h4 class="mb-4">Apply For Certificate</h4>
+							<form action="apply_certificate" method="post">
+								<div class="row g-3">
+									<div class="col-12 col-sm-6">
+										<input type="text" class="form-control" name="name" placeholder="Your Name">
+									</div>
+									<div class="col-12 col-sm-6">
+										<input type="email" class="form-control" name="email" placeholder="Your Email">
+									</div>
+
+
+									<div class="col-12 col-sm-6">
+
+										<!--<label>Certificate Type</label>-->
+										<select name="certificate_type" class="form-control">
+
+											<option value="Select">Select Certificate Type</option>
+											<option value="Birth Certificate">Birth Certificate</option>
+											<option value="Death Certificate">Death Certificate</option>
+											<option value="Voter Application">Voter Application</option>
+											<option value="Marriage Certificate">Marriage Certificate</option>
+										</select>
+									</div>
+
+
+									<div class="col-12 col-sm-6">
+										<input type="file" class="form-control bg-white" name="images"
+											placeholder="Select Your Image">
+									</div>
+									<div class="col-12">
+										<textarea class="form-control" name="comments" rows="5"
+											placeholder="Comments"></textarea>
+									</div>
+									<div class="col-12">
+										<button class="btn btn-primary w-100" type="submit">Apply Now</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4"></h4>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>गावाचे नाव</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>गावाची लोकसंख्या </p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>गावाचे क्षेत्र</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i>गावाची स्थापना तारीख</p>
+							<p><i class="fa fa-angle-right text-primary me-2"></i> गावाची निवडणूक</p>
+							<p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>गावाचे स्थान</p>
+						</div>
+						<div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4">छत्रपती शिवाजी महाराज </h4>
+							<p class="m-0">शिवाजी शहाजी भोसले (१९ फेब्रुवारी, १६३० - ३ एप्रिल १६८०), छत्रपती शिवाजी
+								महाराज म्हणून प्रसिद्ध, हे एक भारतीय राजे आणि मराठा साम्राज्याचे संस्थापक होते.
+								विजापूरच्या ढासळत्या आदिलशाहीमधून शिवरायांनी स्वतःचे स्वतंत्र राज्य निर्माण करून मराठा
+								साम्राज्याची स्थापना केली.
+								इ.स. १६७४ मध्ये रायगड किल्ल्यावर औपचारिकपणे छत्रपती म्हणून त्यांचा राज्याभिषेक करण्यात
+								आला.आपल्या कारकीर्दीत शिवाजी महाराजांनी मुघल साम्राज्य, गोवळकोंड्याची कुतुबशाही,
+								विजापूरची आदिलशाही आणि युरोपियन वसाहतवादी शक्तींशी युती व शत्रुत्व दोन्ही केले.
+								शिस्तबद्ध लष्कर व सुसंघटित प्रशासकीय यंत्रणेच्या बळावर छत्रपती शिवाजी महाराजांनी एक
+								सामर्थ्यशाली आणि प्रागतिक राज्य उभे केले.
+								किनारी आणि अंतर्गत प्रदेशातील किल्ल्यांची डागडुजी करण्यासोबतच त्यांनी अनेक नवे किल्लेही
+								उभारले.</p>
+						</div>
+						<br>
+						<div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+							<h4 class="mb-4">छत्रपती संभाजी महाराज </h4>
+							<p class="m-0">छत्रपती संभाजी महाराज यांचा जन्म 1657 मध्ये 14 मे रोजी पुरंदर किल्ल्यावर
+								झाला.
+								संभाजी महाराजांचे पालन पोषण हे शिवाजी महाराजांच्या मातोश्री जिजाबाई यांनी केलं. संभाजी
+								महाराजांना छावा म्हणून देखील ओळखतात याचा अर्थ शावक किंवा शेर का बच्चा असा होतो.
+								संभाजी महाराज हे संस्कृत सोबत 8 इतर भाषांमध्ये निपुण होते.संभाजी महाराजांनी त्यांचा
+								बालपणापासून राज्यातील ज्या राजकीय समस्या आहेत त्यांना सोडवायला सुरुवात केली होती.
+								बालपणात मिळालेल्या अनुभवामुळे आणि त्यांनी घेतलेल्या शिक्षणामुळे बाळ शंभुराजे पुढे जाऊन
+								धर्मवीर छत्रपती संभाजी महाराज बनले. त्यांनी औरंगजेबाच्या 8 लाखाहून अधिक सैन्याचा सामना
+								केला आणि सर्वच युद्धात मुघलांना पराभूत केले. औरंगजेब बादशहा जेव्हा महाराष्ट्रात आला
+								तेव्हा उत्तर भारतात इतर हिंदू राजांना स्वतःचे राज्य पुन्हा स्थापन करण्यासाठी वेळ मिळाला.
+								त्यामुळे
+								या संभाजी राजांच्या प्रति फक्त दक्षिणेतील हिंदू नाही तर संपूर्ण महाराष्ट्रात आणि उत्तर
+								भारतात सर्व ऋणी आहेत. कारण त्या काळात जर संभाजी महाराजांनी समर्पण केले असते तर कदाचित
+								पुढील
+								काही काळात औरंगजेबाने उत्तर भारतातील सर्व हिंदू सत्ता नष्ट केल्या असत्या.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Job Detail End -->
+
+		
+
+
+
+		<!-- Footer Start -->
+		<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+			<div class="container py-5">
+				<div class="row g-5">
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-white mb-4">GramPachayat</h5>
+						<a class="btn btn-link text-white-50" href="about">About Us</a>
+						<a class="btn btn-link text-white-50" href="contact">Contact Us</a>
+						<a class="btn btn-link text-white-50" href="required_doc_certificate_list">Our Services</a>
+						<a class="btn btn-link text-white-50" href="privacyPolicy">Privacy Policy</a>
+						<a class="btn btn-link text-white-50" href="termsAndCondition">Terms & Condition</a>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-white mb-4">Quick Links</h5>
+						<a class="btn btn-link text-white-50" href="about">About Us</a>
+						<a class="btn btn-link text-white-50" href="contact">Contact Us</a>
+						<a class="btn btn-link text-white-50" href="required_doc_certificate">Our Services</a>
+						<a class="btn btn-link text-white-50" href="privacyPolicy">Privacy Policy</a>
+						<a class="btn btn-link text-white-50" href="termsAndCondition">Terms & Condition</a>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-white mb-4">Contact</h5>
+						<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nagar Road, Wagholi, Pune</p>
+						<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+						<p class="mb-2"><i class="fa fa-envelope me-3"></i>grampanchyat@gmail.com</p>
+						<div class="d-flex pt-2">
+							<a class="btn btn-outline-light btn-social" href="https://twitter.com/i/flow/signup"><i
+									class="fab fa-twitter"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://www.facebook.com/"><i
+									class="fab fa-facebook-f"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://www.youtube.com/"><i
+									class="fab fa-youtube"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/login"><i
+									class="fab fa-linkedin-in"></i></a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-white mb-4">User</h5>
+						<p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+						<div class="position-relative mx-auto" style="max-width: 400px;">
+							<input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+								placeholder="Your email">
+							<button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+								[[${user.email}]]</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<!--	<div class="container">
+				<div class="copyright">
+					<div class="row">
+						                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+							
+							/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </div>
+						<div class="col-md-6 text-center text-md-end">
+							<div class="footer-menu">
+								<a href="index1">Home</a>
+								<a href="category">Cookies</a>
+								<a href="help">Help</a>
+								<a href="about">FQAs</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<!-- Footer End -->
+
+
+		<!-- Back to Top -->
+		<a href="/user/required_doc_certificate_list" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+				class="bi bi-arrow-up"></i></a>
+	</div>
+
+	<!-- JavaScript Libraries -->
+	<!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+     Template Javascript 
+    <script src="js/main.js"></script>-->
+
+
+
+	<script th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/lib/wow/wow.min.js}"></script>
+	<script th:src="@{/lib/easing/easing.min.js}"></script>
+	<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+	<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+	<!-- Template Javascript-->
+	<script th:src="@{/js/main.js}"></script>
+
+	<script type="text/javascript" src="..//../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+
+
+
+
+</body>
+
+</html>
